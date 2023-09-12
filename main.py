@@ -1,5 +1,15 @@
 import turtle
 
+
+def get_set_ready(turtle_object, color, x_position, y_position):
+    """This function sets the shape and color of the turtle, and it positions a turtle to the starting point of the
+    race i.e. left edge of the canvas. It takes 4 arguments - turtle object, color name, x position and y position."""
+    turtle_object.shape("turtle")
+    turtle_object.color(color)
+    turtle_object.penup()
+    turtle_object.goto(x=x_position, y=y_position)
+
+
 screen = turtle.Screen()
 screen.setup(500, 400)
 
@@ -15,16 +25,10 @@ colors = ["violet", "indigo", "blue", "green", "yellow", "orange", "red"]
 x_pos = -240
 y_pos = 150
 
-
-def get_set_ready(turtle_object, color, x_position, y_position):
-    pass
-
-
 for i in range(0, 7):
     turtle_obj = turtle.Turtle()
     get_set_ready(turtle_object=turtle_obj, color=colors[i], x_position=x_pos, y_position=y_pos)
     y_pos -= 50
     turtles.append(turtle_obj)
-
 
 screen.exitonclick()
