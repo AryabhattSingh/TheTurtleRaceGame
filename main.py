@@ -1,3 +1,4 @@
+import random
 import turtle
 
 
@@ -30,5 +31,21 @@ for i in range(0, 7):
     get_set_ready(turtle_object=turtle_obj, color=colors[i], x_position=x_pos, y_position=y_pos)
     y_pos -= 50
     turtles.append(turtle_obj)
+
+is_game_on = True
+while is_game_on:
+    for turtle_obj in turtles:
+        random_distance = random.randint(0, 5)
+        turtle_obj.forward(random_distance)
+
+        if turtle_obj.xcor() >= 222:
+            turtle.hideturtle()
+            turtle.penup()
+            turtle.goto(x=-30, y=0)
+            if turtle_obj.pencolor()[0] == user_bet:
+                turtle.write(f"\nCongratulations!\nYour turtle won.\nThe winner is {turtle_obj.pencolor()} turtle.")
+            else:
+                turtle.write(f"\nBetter luck next time!\nYour turtle lost.\nThe winner is {turtle_obj.pencolor()} turtle.")
+
 
 screen.exitonclick()
