@@ -46,6 +46,6 @@ while is_game_on:
                 turtle.write(f"\nCongratulations!\nYour turtle won.\nThe winner is {turtle_obj.pencolor()} turtle.")
             else:
                 turtle.write(f"\nBetter luck next time!\nYour turtle lost.\nThe winner is {turtle_obj.pencolor()} turtle.")
-
+            is_game_on = False
 
 screen.exitonclick()
